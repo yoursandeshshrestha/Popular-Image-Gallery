@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-image">
+            <img src="Asset/1.jpg" onmouseover="change(this)" >
+            <img src="Asset/2.jpg" onmouseover="change(this)">
+            <img src="Asset/3.jpg" onmouseover="change(this)">
+            <img src="Asset/4.jpg" onmouseover="change(this)">
+            <img src="Asset/5.jpg" onmouseover="change(this)">
+        </div>
+        <div class="right-image">
+            <img class="main-img" src="Asset/2.jpg" >
+        </div>
+    </div>
+    <script>
+            const smallImages = document.querySelectorAll('.left-image img');
+            smallImages.forEach(img => {
+                const image = new Image();
+                image.src = img.src;
+            });
+
+            function change(smallImg) {
+                const mainImg = document.querySelector('.main-img');
+                mainImg.src = smallImg.src;
+            }
+    </script>
+</body>
+</html>
